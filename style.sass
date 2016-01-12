@@ -1,0 +1,1388 @@
+/*html/body locks, default styling*/
+html
+	width: 100%
+	height: 100%
+	overflow-x: hidden
+	box-sizing: border-box
+	
+body
+	min-width: 320px
+	width: 100%
+	height: 100%
+	background: #efefef
+	color: #121212
+	font-size: 14px
+	line-height: 16px
+	font-family: arial, helvetica, sans-serif
+
+/*box model reset, padding/margin reset*/
+*,
+*:after,
+*:before
+	box-sizing: inherit
+	padding: 0
+	margin: 0
+	
+/*display block*/
+address,figure, article, footer, ol, aside, from, output, blockquote, h1, h2, h3, h4, h5, h6, p, canvas, header, pre, dd, hgroup, section, div, hr, table, dl, main, tfoot, fieldset, nav, video, noscript, .block-show
+	display: block
+	
+/*reset h tags, they're for SEO not styling*/
+h1, h2, h3, h4, h5, h6
+	font-weight: 400
+	font-size: 14px
+	
+/*reset strong tags*/
+strong
+	font-weight: 400
+	
+/*reset em tags*/
+em
+	font-style: normal
+	
+/*default style for <a> tags*/
+a
+	text-decoration: underline
+	color: #4a4a4a
+	
+a:hover
+	color: #3a3a3a
+	
+a:active,
+a:focus
+	outline: dotted 1px #4a4a4a
+	
+/*screen sizes*/	
+@media screen and (min-width: 641px)
+	.full-w
+		left: 0
+		
+	.full-r
+		right: 0	
+	
+.w-360
+	max-width: 360px
+.w-480
+	max-width: 480px
+.w-640
+	max-width: 640px
+.w-768
+	max-width: 768px
+.w-960
+	max-width: 960px
+.w-1024
+	max-width: 1024px
+.w-1200
+	max-width: 1200px
+.w-1600
+	max-width: 1600px
+div[class^="w-"],
+div[class$="-w"]
+	background: #ccc
+	width: 100%	
+	
+/*components*/
+.r
+	display: block
+	width: 100%
+	*:last-child
+		margin-right: 0
+
+/*all columns same height*/
+.flex
+	display: -ms-flexbox
+	display: -webkit-flex
+	display: flex
+	-webkit-flex-direction: row
+	-ms-flex-direction: row
+	flex-direction: row
+	-webkit-flex-wrap: wrap
+	-ms-flex-wrap: wrap
+	flex-wrap: wrap
+	-webkit-justify-content: flex-start
+	-ms-flex-pack: start
+	justify-content: flex-start
+	-webkit-align-content: stretch
+	-ms-flex-line-pack: stretch
+	align-content: stretch	
+
+.flex
+	*[class^="c-"] 
+		margin-right: 0
+
+*[class^="c-"] 
+	margin-right: -4px
+	display: inline-block
+	vertical-align: top
+	-webkit-order: 0
+	-ms-flex-order: 0
+	order: 0
+	-webkit-flex: 0 1 auto
+	-ms-flex: 0 1 auto
+	flex: 0 1 auto
+	-webkit-align-self: auto
+	-ms-flex-item-align: auto
+	align-self: auto
+	background: #ccc
+	
+/*animate column adjustment, optional class. Apply to .r to animate the resizing of columns*/
+.animated
+	*[class^="c-"]
+		-webkit-transition: all 0.5s ease-out
+		-moz-transition: all 0.5s ease-out
+		-ms-transition: all 0.5s ease-out
+		-o-transition: all 0.5s ease-out
+		transition: all 0.5s ease-out
+
+.c-quarter
+	width: 25%
+.c-third
+	width: 33.33%
+.c-half
+	width: 50%
+.c-two-thirds
+	width: 66.66%
+.c-three-quarter
+	width: 75%
+.c-switch-0
+	float: right
+	margin: 0	
+.c-switch-left
+	float: left
+	margin: 0
+
+/*fixed width cumns*/
+.c-320
+	width: 320px
+.c-360
+	width: 360px
+.c-480
+	width: 480px
+.c-640
+	width: 640px
+.c-768
+	width: 768px
+.c-800
+	width: 800px
+.c-960
+	width: 960px
+.c-1024
+	width: 1024px
+.c-1200
+	width: 1200px
+.c-1600
+	width: 1600px
+
+/*responsive cumns*/
+.c-xxs-1
+	width: 6.25%
+.c-xxs-2
+	width: 12.5%
+.c-xxs-3
+	width: 18.75%
+.c-xxs-4
+	width: 25%
+.c-xxs-5
+	width: 31.25%
+.c-xxs-third
+	width: 33.33%
+.c-xxs-6
+	width: 37.5%
+.c-xxs-7
+	width: 43.75%
+.c-xxs-8
+	width: 50%
+.c-xxs-9
+	width: 56.25%
+.c-xxs-10
+	width: 62.5%
+.c-xxs-two-thirds
+	width: 66.66%
+.c-xxs-11
+	width: 68.75%
+.c-xxs-12
+	width: 75%
+.c-xxs-13
+	width: 81.25%
+.c-xxs-14
+	width: 87.5%
+.c-xxs-15
+	width: 93.75%
+.c-xxs-16
+	width: 100%
+.c-xxs-shift-0
+	margin-left: 0
+.c-xxs-shift-1
+	margin-left: 6.25%
+.c-xxs-shift-2
+	margin-left: 12.5%
+.c-xxs-shift-3
+	margin-left: 18.75%
+.c-xxs-shift-4
+	margin-left: 25%
+.c-xxs-shift-5
+	margin-left: 31.25%
+.c-xxs-shift-6
+	margin-left: 37.5%
+.c-xxs-shift-7
+	margin-left: 43.75%
+.c-xxs-shift-8
+	margin-left: 50%
+.c-xxs-shift-9
+	margin-left: 56.25%
+.c-xxs-shift-10
+	margin-left: 62.5%
+.c-xxs-shift-11
+	margin-left: 68.75%
+.c-xxs-shift-12
+	margin-left: 75%
+.c-xxs-shift-13
+	margin-left: 81.25%
+.c-xxs-shift-14
+	margin-left: 87.5%
+.c-xxs-shift-15
+	margin-left: 93.75%
+.c-xxs-switch-1
+	float: right
+	margin-right: 6.25%
+.c-xs-switch-2
+	float: right
+	margin-right: 12.5%
+.c-xxs-switch-3
+	float: right
+	margin-right: 18.75%
+.c-xxs-switch-4
+	float: right
+	margin-right: 25%
+.c-xxs-switch-5
+	float: right
+	margin-right: 31.25%
+.c-xxs-switch-6
+	float: right
+	margin-right: 37.5%
+.c-xxs-switch-7
+	float: right
+	margin-right: 43.75%
+.c-xxs-switch-8
+	float: right
+	margin-right: 50%
+.c-xxs-switch-9
+	float: right
+	margin-right: 56.25%
+.c-xxs-switch-10
+	float: right
+	margin-right: 62.5%
+.c-xxs-switch-11
+	float: right
+	margin-right: 68.75%
+.c-xxs-switch-12
+	float: right
+	margin-right: 75%
+.c-xxs-switch-13
+	float: right
+	margin-right: 81.25%
+.c-xxs-switch-14
+	float: right
+	margin-right: 87.5%
+.c-xxs-switch-15
+	float: right
+	margin-right: 93.75%
+.c-xxs-switch-16
+	float: left
+	margin-left: 0
+
+@media screen and (min-width: 361px)
+	.c-xs-1
+		width: 6.25%
+	.c-xs-2
+		width: 12.5%
+	.c-xs-3
+		width: 18.75%
+	.c-xs-4
+		width: 25%
+	.c-xs-5
+		width: 31.25%
+	.c-xs-third
+		width: 33.33%
+	.c-xs-6
+		width: 37.5%
+	.c-xs-7
+		width: 43.75%
+	.c-xs-8
+		width: 50%
+	.c-xs-9
+		width: 56.25%
+	.c-xs-10
+		width: 62.5%
+	.c-xs-two-thirds
+		width: 66.66%
+	.c-xs-11
+		width: 68.75%
+	.c-xs-12
+		width: 75%
+	.c-xs-13
+		width: 81.25%
+	.c-xs-14
+		width: 87.5%
+	.c-xs-15
+		width: 93.75%
+	.c-xs-16
+		width: 100%
+	.c-xs-shift-0
+		margin-left: 0
+	.c-xs-shift-1
+		margin-left: 6.25%
+	.c-xs-shift-2
+		margin-left: 12.5%
+	.c-xs-shift-3
+		margin-left: 18.75%
+	.c-xs-shift-4
+		margin-left: 25%
+	.c-xs-shift-5
+		margin-left: 31.25%
+	.c-xs-shift-6
+		margin-left: 37.5%
+	.c-xs-shift-7
+		margin-left: 43.75%
+	.c-xs-shift-8
+		margin-left: 50%
+	.c-xs-shift-9
+		margin-left: 56.25%
+	.c-xs-shift-10
+		margin-left: 62.5%
+	.c-xs-shift-11
+		margin-left: 68.75%
+	.c-xs-shift-12
+		margin-left: 75%
+	.c-xs-shift-13
+		margin-left: 81.25%
+	.c-xs-shift-14
+		margin-left: 87.5%
+	.c-xs-shift-15
+		margin-left: 93.75%
+	.c-xs-switch-1
+		float: right
+		margin-right: 6.25%
+	.c-xs-switch-2
+		float: right
+		margin-right: 12.5%
+	.c-xs-switch-3
+		float: right
+		margin-right: 18.75%
+	.c-xs-switch-4
+		float: right
+		margin-right: 25%
+	.c-xs-switch-5
+		float: right
+		margin-right: 31.25%
+	.c-xs-switch-6
+		float: right
+		margin-right: 37.5%
+	.c-xs-switch-7
+		float: right
+		margin-right: 43.75%
+	.c-xs-switch-8
+		float: right
+		margin-right: 50%
+	.c-xs-switch-9
+		float: right
+		margin-right: 56.25%
+	.c-xs-switch-10
+		float: right
+		margin-right: 62.5%
+	.c-xs-switch-11
+		float: right
+		margin-right: 68.75%
+	.c-xs-switch-12
+		float: right
+		margin-right: 75%
+	.c-xs-switch-13
+		float: right
+		margin-right: 81.25%
+	.c-xs-switch-14
+		float: right
+		margin-right: 87.5%
+	.c-xs-switch-15
+		float: right
+		margin-right: 93.75%
+	.c-xs-switch-16
+		float: left
+		margin-left: 0
+		
+@media screen and (min-width: 481px)
+	.c-s-1
+		width: 6.25%
+	.c-s-2
+		width: 12.5%
+	.c-s-3
+		width: 18.75%
+	.c-s-4
+		width: 25%
+	.c-s-5
+		width: 31.25%
+	.c-s-third
+		width: 33.33%
+	.c-s-6
+		width: 37.5%
+	.c-s-7
+		width: 43.75%
+	.c-s-8
+		width: 50%
+	.c-s-9
+		width: 56.25%
+	.c-s-10
+		width: 62.5%
+	.c-s-two-thirds
+		width: 66.66%
+	.c-s-11
+		width: 68.75%
+	.c-s-12
+		width: 75%
+	.c-s-13
+		width: 81.25%
+	.c-s-14
+		width: 87.5%
+	.c-s-15
+		width: 93.75%
+	.c-s-16
+		width: 100%
+	.c-s-shift-0
+		margin-left: 0
+	.c-s-shift-1
+		margin-left: 6.25%
+	.c-s-shift-2
+		margin-left: 12.5%
+	.c-s-shift-3
+		margin-left: 18.75%
+	.c-s-shift-4
+		margin-left: 25%
+	.c-s-shift-5
+		margin-left: 31.25%
+	.c-s-shift-6
+		margin-left: 37.5%
+	.c-s-shift-7
+		margin-left: 43.75%
+	.c-s-shift-8
+		margin-left: 50%
+	.c-s-shift-9
+		margin-left: 56.25%
+	.c-s-shift-10
+		margin-left: 62.5%
+	.c-s-shift-11
+		margin-left: 68.75%
+	.c-s-shift-12
+		margin-left: 75%
+	.c-s-shift-13
+		margin-left: 81.25%
+	.c-s-shift-14
+		margin-left: 87.5%
+	.c-s-shift-15
+		margin-left: 93.75%
+	.c-s-switch-16
+		float: left
+		margin-left: 0
+	.c-s-switch-1
+		float: right
+		margin-right: 6.25%
+	.c-s-switch-2
+		float: right
+		margin-right: 12.5%
+	.c-s-switch-3
+		float: right
+		margin-right: 18.75%
+	.c-s-switch-4
+		float: right
+		margin-right: 25%
+	.c-s-switch-5
+		float: right
+		margin-right: 31.25%
+	.c-s-switch-6
+		float: right
+		margin-right: 37.5%
+	.c-s-switch-7
+		float: right
+		margin-right: 43.75%
+	.c-s-switch-8
+		float: right
+		margin-right: 50%
+	.c-s-switch-9
+		float: right
+		margin-right: 56.25%
+	.c-s-switch-10
+		float: right
+		margin-right: 62.5%
+	.c-s-switch-11
+		float: right
+		margin-right: 68.75%
+	.c-s-switch-12
+		float: right
+		margin-right: 75%
+	.c-s-switch-13
+		float: right
+		margin-right: 81.25%
+	.c-s-switch-14
+		float: right
+		margin-right: 87.5%
+	.c-s-switch-15
+		float: right
+		margin-right: 93.75%
+	.c-s-switch-16
+		float: left
+		margin-left: 0		
+		
+@media screen and (min-width: 768px)
+	.c-m-1
+		width: 6.25%
+	.c-m-2
+		width: 12.5%
+	.c-m-3
+		width: 18.75%
+	.c-m-4
+		width: 25%
+	.c-m-5
+		width: 31.25%
+	.c-m-third
+		width: 33.33%
+	.c-m-6
+		width: 37.5%
+	.c-m-7
+		width: 43.75%
+	.c-m-8
+		width: 50%
+	.c-m-9
+		width: 56.25%
+	.c-m-10
+		width: 62.5%
+	.c-m-two-thirds
+		width: 66.66%
+	.c-m-11
+		width: 68.75%
+	.c-m-12
+		width: 75%
+	.c-m-13
+		width: 81.25%
+	.c-m-14
+		width: 87.5%
+	.c-m-15
+		width: 93.75%
+	.c-m-16
+		width: 100%
+	.c-m-shift-0
+		margin-left: 0
+	.c-m-shift-1
+		margin-left: 6.25%
+	.c-m-shift-2
+		margin-left: 12.5%
+	.c-m-shift-3
+		margin-left: 18.75%
+	.c-m-shift-4
+		margin-left: 25%
+	.c-m-shift-5
+		margin-left: 31.25%
+	.c-m-shift-6
+		margin-left: 37.5%
+	.c-m-shift-7
+		margin-left: 43.75%
+	.c-m-shift-8
+		margin-left: 50%
+	.c-m-shift-9
+		margin-left: 56.25%
+	.c-m-shift-10
+		margin-left: 62.5%
+	.c-m-shift-11
+		margin-left: 68.75%
+	.c-m-shift-12
+		margin-left: 75%
+	.c-m-shift-13
+		margin-left: 81.25%
+	.c-m-shift-14
+		margin-left: 87.5%
+	.c-m-shift-15
+		margin-left: 93.75%
+	.c-m-switch-16
+		float: left
+		margin-left: 0
+	.c-m-switch-1
+		float: right
+		margin-right: 6.25%
+	.c-m-switch-2
+		float: right
+		margin-right: 12.5%
+	.c-m-switch-3
+		float: right
+		margin-right: 18.75%
+	.c-m-switch-4
+		float: right
+		margin-right: 25%
+	.c-m-switch-5
+		float: right
+		margin-right: 31.25%
+	.c-m-switch-6
+		float: right
+		margin-right: 37.5%
+	.c-m-switch-7
+		float: right
+		margin-right: 43.75%
+	.c-m-switch-8
+		float: right
+		margin-right: 50%
+	.c-m-switch-9
+		float: right
+		margin-right: 56.25%
+	.c-m-switch-10
+		float: right
+		margin-right: 62.5%
+	.c-m-switch-11
+		float: right
+		margin-right: 68.75%
+	.c-m-switch-12
+		float: right
+		margin-right: 75%
+	.c-m-switch-13
+		float: right
+		margin-right: 81.25%
+	.c-m-switch-14
+		float: right
+		margin-right: 87.5%
+	.c-m-switch-15
+		float: right
+		margin-right: 93.75%
+	.c-m-switch-16
+		float: left
+		margin-left: 0
+		
+@media screen and (min-width: 960px)
+	.c-l-1
+		width: 6.25%
+	.c-l-2
+		width: 12.5%
+	.c-l-3
+		width: 18.75%
+	.c-l-4
+		width: 25%
+	.c-l-5
+		width: 31.25%
+	.c-l-third
+		width: 33.33%
+	.c-l-6
+		width: 37.5%
+	.c-l-7
+		width: 43.75%
+	.c-l-8
+		width: 50%
+	.c-l-9
+		width: 56.25%
+	.c-l-10
+		width: 62.5%
+	.c-l-two-thirds
+		width: 66.66%
+	.c-l-11
+		width: 68.75%
+	.c-l-12
+		width: 75%
+	.c-l-13
+		width: 81.25%
+	.c-l-14
+		width: 87.5%
+	.c-l-15
+		width: 93.75%
+	.c-l-16
+		width: 100%
+	.c-l-shift-0
+		margin-left: 0
+	.c-l-shift-1
+		margin-left: 6.25%
+	.c-l-shift-2
+		margin-left: 12.5%
+	.c-l-shift-3
+		margin-left: 18.75%
+	.c-l-shift-4
+		margin-left: 25%
+	.c-l-shift-5
+		margin-left: 31.25%
+	.c-l-shift-6
+		margin-left: 37.5%
+	.c-l-shift-7
+		margin-left: 43.75%
+	.c-l-shift-8
+		margin-left: 50%
+	.c-l-shift-9
+		margin-left: 56.25%
+	.c-l-shift-10
+		margin-left: 62.5%
+	.c-l-shift-11
+		margin-left: 68.75%
+	.c-l-shift-12
+		margin-left: 75%
+	.c-l-shift-13
+		margin-left: 81.25%
+	.c-l-shift-14
+		margin-left: 87.5%
+	.c-l-shift-15
+		margin-left: 93.75%
+	.c-l-switch-16
+		float: left
+		margin-left: 0
+	.c-l-switch-1
+		float: right
+		margin-right: 6.25%
+	.c-l-switch-2
+		float: right
+		margin-right: 12.5%
+	.c-l-switch-3
+		float: right
+		margin-right: 18.75%
+	.c-l-switch-4
+		float: right
+		margin-right: 25%
+	.c-l-switch-5
+		float: right
+		margin-right: 31.25%
+	.c-l-switch-6
+		float: right
+		margin-right: 37.5%
+	.c-l-switch-7
+		float: right
+		margin-right: 43.75%
+	.c-l-switch-8
+		float: right
+		margin-right: 50%
+	.c-l-switch-9
+		float: right
+		margin-right: 56.25%
+	.c-l-switch-10
+		float: right
+		margin-right: 62.5%
+	.c-l-switch-11
+		float: right
+		margin-right: 68.75%
+	.c-l-switch-12
+		float: right
+		margin-right: 75%
+	.c-l-switch-13
+		float: right
+		margin-right: 81.25%
+	.c-l-switch-14
+		float: right
+		margin-right: 87.5%
+	.c-l-switch-15
+		float: right
+		margin-right: 93.75%
+	.c-l-switch-16
+		float: left
+		margin-left: 0
+		
+@media screen and (min-width: 1024px)
+	.c-xl-1
+		width: 6.25%
+	.c-xl-2
+		width: 12.5%
+	.c-xl-3
+		width: 18.75%
+	.c-xl-4
+		width: 25%
+	.c-xl-5
+		width: 31.25%
+	.c-xl-third
+		width: 33.33%
+	.c-xl-6
+		width: 37.5%
+	.c-xl-7
+		width: 43.75%
+	.c-xl-8
+		width: 50%
+	.c-xl-9
+		width: 56.25%
+	.c-xl-10
+		width: 62.5%
+	.c-xl-two-thirds
+		width: 66.66%
+	.c-xl-11
+		width: 68.75%
+	.c-xl-12
+		width: 75%
+	.c-xl-13
+		width: 81.25%
+	.c-xl-14
+		width: 87.5%
+	.c-xl-15
+		width: 93.75%
+	.c-xl-16
+		width: 100%
+	.c-l-shift-0
+		margin-left: 0
+	.c-xl-shift-1
+		margin-left: 6.25%
+	.c-xl-shift-2
+		margin-left: 12.5%
+	.c-xl-shift-3
+		margin-left: 18.75%
+	.c-xl-shift-4
+		margin-left: 25%
+	.c-xl-shift-5
+		margin-left: 31.25%
+	.c-xl-shift-6
+		margin-left: 37.5%
+	.c-xl-shift-7
+		margin-left: 43.75%
+	.c-xl-shift-8
+		margin-left: 50%
+	.c-xl-shift-9
+		margin-left: 56.25%
+	.c-xl-shift-10
+		margin-left: 62.5%
+	.c-xl-shift-11
+		margin-left: 68.75%
+	.c-xl-shift-12
+		margin-left: 75%
+	.c-xl-shift-13
+		margin-left: 81.25%
+	.c-xl-shift-14
+		margin-left: 87.5%
+	.c-xl-shift-15
+		margin-left: 93.75%
+	.c-xl-switch-16
+		float: left
+		margin-left: 0
+	.c-xl-switch-1
+		float: right
+		margin-right: 6.25%
+	.c-xl-switch-2
+		float: right
+		margin-right: 12.5%
+	.c-xl-switch-3
+		float: right
+		margin-right: 18.75%
+	.c-xl-switch-4
+		float: right
+		margin-right: 25%
+	.c-xl-switch-5
+		float: right
+		margin-right: 31.25%
+	.c-xl-switch-6
+		float: right
+		margin-right: 37.5%
+	.c-xl-switch-7
+		float: right
+		margin-right: 43.75%
+	.c-xl-switch-8
+		float: right
+		margin-right: 50%
+	.c-xl-switch-9
+		float: right
+		margin-right: 56.25%
+	.c-xl-switch-10
+		float: right
+		margin-right: 62.5%
+	.c-xl-switch-11
+		float: right
+		margin-right: 68.75%
+	.c-xl-switch-12
+		float: right
+		margin-right: 75%
+	.c-xl-switch-13
+		float: right
+		margin-right: 81.25%
+	.c-xl-switch-14
+		float: right
+		margin-right: 87.5%
+	.c-xl-switch-15
+		float: right
+		margin-right: 93.75%
+	.c-xl-switch-16
+		float: left
+		margin-left: 0
+
+@media screen and (min-width: 1200px)
+	.c-xxl-1
+		width: 6.25%
+	.c-xxl-2
+		width: 12.5%
+	.c-xxl-3
+		width: 18.75%
+	.c-xxl-4
+		width: 25%
+	.c-xxl-5
+		width: 31.25%
+	.c-xxl-third
+		width: 33.33%
+	.c-xxl-6
+		width: 37.5%
+	.c-xxl-7
+		width: 43.75%
+	.c-xxl-8
+		width: 50%
+	.c-xxl-9
+		width: 56.25%
+	.c-xxl-10
+		width: 62.5%
+	.c-xxl-third
+		width: 66.66%
+	.c-xxl-11
+		width: 68.75%
+	.c-xxl-12
+		width: 75%
+	.c-xxl-13
+		width: 81.25%
+	.c-xxl-14
+		width: 87.5%
+	.c-xxl-15
+		width: 93.75%
+	.c-xxl-16
+		width: 100%
+	.c-xxl-shift-0
+		margin-left: 0
+	.c-xxl-shift-1
+		margin-left: 6.25%
+	.c-xxl-shift-2
+		margin-left: 12.5%
+	.c-xxl-shift-3
+		margin-left: 18.75%
+	.c-xxl-shift-4
+		margin-left: 25%
+	.c-xxl-shift-5
+		margin-left: 31.25%
+	.c-xxl-shift-6
+		margin-left: 37.5%
+	.c-xxl-shift-7
+		margin-left: 43.75%
+	.c-xl-shift-8
+		maxrgin-left: 50%
+	.c-xxl-shift-9
+		margin-left: 56.25%
+	.c-xxl-shift-10
+		margin-left: 62.5%
+	.c-xxl-shift-11
+		margin-left: 68.75%
+	.c-xxl-shift-12
+		margin-left: 75%
+	.c-xxl-shift-13
+		margin-left: 81.25%
+	.c-xxl-shift-14
+		margin-left: 87.5%
+	.c-xxl-shift-15
+		margin-left: 93.75%
+	.c-xxl-switch-16
+		float: left
+		margin-left: 0
+	.c-xxl-switch-1
+		float: right
+		margin-right: 6.25%
+	.c-xxl-switch-2
+		float: right
+		margin-right: 12.5%
+	.c-xxl-switch-3
+		float: right
+		margin-right: 18.75%
+	.c-xxl-switch-4
+		float: right
+		margin-right: 25%
+	.c-xxl-switch-5
+		float: right
+		margin-right: 31.25%
+	.c-xxl-switch-6
+		float: right
+		margin-right: 37.5%
+	.c-xxl-switch-7
+		float: right
+		margin-right: 43.75%
+	.c-xxl-switch-8
+		float: right
+		margin-right: 50%
+	.c-xxl-switch-9
+		float: right
+		margin-right: 56.25%
+	.c-xxl-switch-10
+		float: right
+		margin-right: 62.5%
+	.c-xxl-switch-11
+		float: right
+		margin-right: 68.75%
+	.c-xxl-switch-12
+		float: right
+		margin-right: 75%
+	.c-xxl-switch-13
+		float: right
+		margin-right: 81.25%
+	.c-xxl-switch-14
+		float: right
+		margin-right: 87.5%
+	.c-xxl-switch-15
+		float: right
+		margin-right: 93.75%
+	.c-xxl-switch-16
+		float: left
+		margin-left: 0
+
+@media screen and (max-width: 1600px)
+	.c-xxxl-1
+		width: 6.25%
+	.c-xxxl-2
+		width: 12.5%
+	.c-xxxl-3
+		width: 18.75%
+	.c-xxxl-4
+		width: 25%
+	.c-xxxl-5
+		width: 31.25%
+	.c-xxxl-third
+		width: 33.33%
+	.c-xxxl-6
+		width: 37.5%
+	.c-xxxl-7
+		width: 43.75%
+	.c-xxxl-8
+		width: 50%
+	.c-xxxl-9
+		width: 56.25%
+	.c-xxxl-10
+		width: 62.5%
+	.c-xxxl-two-thirds
+		width: 66.66%
+	.c-xxxl-11
+		width: 68.75%
+	.c-xxxl-12
+		width: 75%
+	.c-xxxl-13
+		width: 81.25%
+	.c-xxxl-14
+		width: 87.5%
+	.c-xxxl-15
+		width: 93.75%
+	.c-xxxl-16
+		width: 100%
+	.c-xxxl-shift-0
+		margin-left: 0
+	.c-xxxl-shift-1
+		margin-left: 6.25%
+	.c-xxxl-shift-2
+		margin-left: 12.5%
+	.c-xxxl-shift-3
+		margin-left: 18.75%
+	.c-xxxl-shift-4
+		margin-left: 25%
+	.c-xxxl-shift-5
+		margin-left: 31.25%
+	.c-xxxl-shift-6
+		margin-left: 37.5%
+	.c-xxxl-shift-7
+		margin-left: 43.75%
+	.c-xxxl-shift-8
+		margin-left: 50%
+	.c-xxxl-shift-9
+		margin-left: 56.25%
+	.c-xxxl-shift-10
+		margin-left: 62.5%
+	.c-xxxl-shift-11
+		margin-left: 68.75%
+	.c-xxxl-shift-12
+		margin-left: 75%
+	.c-xxxl-shift-13
+		margin-left: 81.25%
+	.c-xxxl-shift-14
+		margin-left: 87.5%
+	.c-xxxl-shift-15
+		margin-left: 93.75%
+	.c-xxxl-switch-1
+		float: right
+		margin-right: 6.25%
+	.c-xxxl-switch-2
+		float: right
+		margin-right: 12.5%
+	.c-xxxl-switch-3
+		float: right
+		margin-right: 18.75%
+	.c-xxxl-switch-4
+		float: right
+		margin-right: 25%
+	.c-xxxl-switch-5
+		float: right
+		margin-right: 31.25%
+	.c-xxxl-switch-6
+		float: right
+		margin-right: 37.5%
+	.c-xxxl-switch-7
+		float: right
+		margin-right: 43.75%
+	.c-xxxl-switch-8
+		float: right
+		margin-right: 50%
+	.c-xxxl-switch-9
+		float: right
+		margin-right: 56.25%
+	.c-xxxl-switch-10
+		float: right
+		margin-right: 62.5%
+	.c-xxxl-switch-11
+		float: right
+		margin-right: 68.75%
+	.c-xxxl-switch-12
+		float: right
+		margin-right: 75%
+	.c-xxxl-switch-13
+		float: right
+		margin-right: 81.25%
+	.c-xxxl-switch-14
+		float: right
+		margin-right: 87.5%
+	.c-xxxl-switch-15
+		float: right
+		margin-right: 93.75%
+	.c-xxxl-switch-16
+		float: left
+		margin-left: 0
+			
+/*support classes*/
+
+.center-block
+	display: block
+	margin: 0 auto
+.float-left
+	float: left
+.float-right
+	float: right
+.padding10
+	padding: 10px
+.padding20
+	padding: 20px
+.shadow
+	-webkit-box-shadow: 0 0 2px 1px rgba(0,0,0,0.2)
+	box-shadow: 0 0 2px 1px rgba(0,0,0,0.2)
+	
+/*lazy designer, use margins! br tags are now hidden*/
+br
+	display: none
+	
+/*main navigation styling*/
+.logo
+	display: inline-block
+
+nav
+	position: relative
+	ul
+		position: relative
+		display: inline
+		li
+			display: inline
+			a
+				text-decoration: none
+			a:hover, 
+			a:focus
+				text-decoration: underline
+
+.nav_btn
+	display: none
+	width: 40px
+	cursor: pointer
+	position: absolute
+	top: 15px
+	right: 10px
+	div
+		height: 5px
+		background: #FFF
+	div:nth-of-type(2)
+		margin: 2px 0
+		
+
+		
+.modal-show
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	min-height: 100%
+	background: rgba(0, 0, 0, 0.7)
+	display: block
+	transition: all 0.5s ease-out
+		
+@media screen and (min-width: 641px)
+	.modal-bg
+		display: inline-block
+		
+	nav
+		ul
+			display: inline-block
+		
+@media screen and (max-width: 640px)
+	.full-w-left
+		left: 200px
+		overflow: hidden
+		position: relative
+		z-index: 2
+		-webkit-transition: all 0.5s ease-out
+		-moz-transition: all 0.5s ease-out
+		-ms-transition: all 0.5s ease-out
+		-o-transition: all 0.5s ease-out
+		transition: all 0.5s ease-out
+		background: #CCC
+		
+	.full-w-right
+		right: 200px
+		overflow: hidden
+		position: relative
+		z-index: 2
+		-webkit-transition: all 0.5s ease-out
+		-moz-transition: all 0.5s ease-out
+		-ms-transition: all 0.5s ease-out
+		-o-transition: all 0.5s ease-out
+		transition: all 0.5s ease-out
+		background: #CCC
+		
+	nav 
+		ul
+			background: #121212
+			transition: all 0.5s ease-out
+			position: static
+			display: none
+			li
+				display: block
+				text-align: center
+							
+	.nav_btn
+		display: inline-block
+		position: absolute
+		z-index: 9999
+		
+	/*optional small screen nav styling*/
+	.slide-left
+		transition: all 0.5s ease-out
+		ul
+			display: block
+			position: fixed
+			top: 0
+			left: -200px
+			width: 200px
+			height: 100%
+		li
+			text-align: left
+			
+	.left-position
+		left: 0 !important
+		
+	.slide-right
+		transition: all 0.5s ease-out
+		ul
+			display: block
+			position: fixed
+			top: 0
+			right: -200px
+			width: 200px
+			height: 100%
+		li
+			text-align: left
+				
+		.right-position
+			right: 0
+			
+	.under-left
+		.nav_btn
+			position: fixed
+			z-index: 3
+			
+	.under-right
+		.nav_btn
+			position: fixed
+			z-index: 3			
+	.w-left
+		left: 0
+		
+	.w-right
+		right: 0
+		
+	.hidden-menu
+		display: block
+		position: fixed
+		width: 200px
+		top: 0px
+		background: #121212
+		height: 100%
+		z-index: 1
+		
+	.right-0
+		right: 0
+		
+	.fade-in
+		ul
+			position: fixed
+			top: 15%
+			left: 10%
+			width: 80%
+			transition: all 0.5s ease-out
+			
+	.fixed-nav
+		position: fixed
+		top: 0
+		left: 0
+		width: 100%	
+		
+@media screen and (min-width: 641px)
+	.hidden-menu
+		display: none		
+/* custom theme styling*/
+.avatar
+	width: 40px
+	height: auto
+	
+cite.fn, .says
+	font-size: 18px
+	position: relative
+	top: -15px
+				
+.logged-in-as a:first-of-type
+	font-style: italic
+					
+/* custom responsive section */
+@media screen and (max-width: 360px)
+
+@media screen and (min-width: 361px)
+
+@media screen and (min-width: 481px)
+
+@media screen and (max-width: 640px)
+	.blogHeader
+		position: relative
+		
+	img.attachment-post-thumbnail
+		width: 100%
+		height: auto
+		
+	.blogHeader h1
+		position: absolute
+		left: 20px
+		right: 20px
+		bottom: 20px
+		
+.searchInput
+	position: relative
+	-webkit-border-radius: 4px
+	border-radius: 4px
+	overflow: hidden
+	margin: 0 auto
+	border: solid 1px #4a4a4a
+	input.search-input
+		width: 100%
+		height: 23px
+		border: none
+		padding: 6px
+	button.search-submit
+		position: absolute
+		right: 0
+		width: 40px
+		cursor: pointer
+		height: 25px
+		margin: -1px -1px 0 0
+		border: none
+
+@media screen and (min-width: 641px)
+
+@media screen and (min-width: 768px)
+
+@media screen and (min-width: 960px)
+
+@media screen and (min-width: 1024px)
+
+@media screen and (min-width: 1200px)
+
+@media screen and (max-width: 1600px)
+
+@media screen and (min-width: 1601px)
